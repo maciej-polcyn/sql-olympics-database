@@ -1,3 +1,4 @@
+DROP PROCEDURE IF EXISTS get_medalists_by_country;
 DELIMITER $$
 CREATE PROCEDURE get_medalists_by_country()
 begin
@@ -14,7 +15,6 @@ select
 from athletic_events ae
 join noc using(noc)
 group by games, region
-order by games
 )
 select 
 	games,
